@@ -1,0 +1,122 @@
+.products {
+    display: flex;
+    width: 89%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.switch_categories {
+    width: 90%;
+    margin: 0 auto;
+    height: 10vw;
+    max-height: 100px;
+    background: #F2F3F7;
+    border-radius: 10vw;
+    display: flex;
+    overflow: auto;
+}
+
+.switch_categories div {
+    margin: 0;
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4vw;
+    width: 30%;
+    min-width: 35%;
+    height: 100%;
+    color: #626C77;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.switch_categories .active_product {
+    box-sizing: border-box;
+    height: 100%;
+    color: #F2F3F7;
+    background: #E30611;
+    border-radius: 15vw;
+    border: #F2F3F7 3px solid;
+}
+
+.products .product {
+    width: 41.35vw;
+    height: 10%;
+    background: #F2F3F7;
+    border-radius: 20px;
+    margin-top: 1.5vw;
+    margin-bottom: 1.5vw;
+    margin-right: 1.25vw;
+    padding: 0.5%;
+    display: flex;
+    flex-direction: column;
+}
+
+.products .product:first-child, .products .product:nth-child(2) {
+    margin-top: 3vw;
+}
+
+.products .product:nth-child(even) {
+    margin-right: 0;
+    margin-left: 1.25vw;
+}
+  
+.products .product img {
+    height: 30vw;
+    width: 100%;   
+    border-radius: 20px 20px 20px 20px;
+    margin-bottom: 4%;
+}
+
+.products .product .img-block-title {
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 4.5vw;
+    margin-left: 4%;    
+    color:  #000;
+    margin-bottom: 2.4%;
+}
+
+.products .product div {
+    margin-bottom: 4%;
+}
+
+.products .product .img-block-subtitle {
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 400;
+    color: #000;
+    font-size: 4vw;
+    margin-left: 4%;
+    /* margin-bottom: 2%; */
+}
+
+.products .product .img-block-subtitle:last-child {
+    color: #626C77;
+}
+
+.button_block {
+  width: 100%;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
+@media (max-width: 800px) {
+    .products .product {
+        border-radius: 2.5vw;
+    }
+    .products .product img {
+        border-radius: 2.5vw;
+    }
+}
+
+
+@media (max-width:961px) {
+    .switch_categories::-webkit-scrollbar {
+        width: 0px;
+        height: 0;
+    }
+}

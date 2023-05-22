@@ -1,0 +1,61 @@
+.container {
+    width: 89%;
+    height: 100%;
+    margin: 10vh auto 0;
+}
+
+.profile_main_div {
+    width: 89% !important;
+    margin: 0 auto;
+}
+
+.profile_main_div .history_list {
+    margin-top: 1vh;
+    overflow-y: scroll;
+    height: 50vh;
+}
+
+.profile_main_div .history_list::-webkit-scrollbar {
+    width: 0px;
+    height: 0;
+}
+
+.profile_main_div .history_list div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: #E2E5EB 1px solid;
+    height: 10vw;
+}
+
+.profile_main_div .history_list div span {
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 3vw;
+    color: #626C77;
+}
+
+.profile_main_div .history_list div span:nth-child(2) {
+    width: 45%;
+    font-weight: 700;
+    font-size: 3.5vw;
+    color: #000000;
+    text-align: start;
+}
+
+.profile_main_div .history_list div span:nth-child(3) {
+    width: 15%;
+    text-align: start;
+}
+
+.profile_main_div .history_list div span:last-child {
+    width: 20%;
+    text-align: start;
+}
+
+@media (min-width: 800px) {
+    .profile_main_div input {
+        font-size: 3vw !important;
+    }
+}

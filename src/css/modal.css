@@ -1,0 +1,170 @@
+.modal {
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.4);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index:  100;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.5s;
+}
+
+.modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.modal-content {
+  padding: 20px;
+  border-radius: 12px;
+  background-color: white;
+  transform: scale(0.5);
+  transition: 0.4s all;
+  width: 65%;
+}
+
+.modal-content.active {
+  transform: scale(1);
+}
+
+.to_promo_code {
+    width: auto;
+}
+
+.text_promo_code {
+    margin: 0 auto 2vh;
+    width: 100%;
+    display: inline-block;
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3.5vw;
+    text-align: center;
+    color: #000000;
+}
+
+.modal .Pin p:first-of-type {
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2.5vw;
+    text-align: center;
+    color: #F95721;
+
+}
+
+.modal .Pin .pincode-input-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 2vw;
+}
+
+.modal .Pin .pincode-input-container input {
+    border: none !important;
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 2vw;
+    text-align: center;
+    color: #000000;
+    width: 5vw !important;
+    height: 5vw !important;
+    max-width: 50px !important;
+    max-height: 50px !important;
+    caret-color: transparent !important;
+    margin-right: 2vw !important;
+}
+
+.modal .Pin .pincode-input-container input:last-child {
+    margin-right: 0px !important;
+}
+
+.modal .Pin .pincode-input-container input::placeholder {
+    width: 3vw !important;
+    height: 3vw !important;
+    max-width: 30px !important;
+    max-height: 30px !important;
+    border-radius: 50% !important;
+    background: #E2E5EB !important;
+    text-indent: -999em !important;
+    position: absolute;
+    top: 25%;
+    left: 25%;
+}
+
+.modal .Pin .react-simple-keyboard {
+    background-color: #fff !important;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.modal .Pin .react-simple-keyboard .hg-button {
+    width: 10vw !important;
+    height: 10vw !important;
+    max-width: 80px !important;
+    max-height: 80px !important;
+    border-radius: 50% !important;
+    border: none !important;
+    background: #F2F3F7 !important;
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3vw;
+    text-align: center;
+    color: #000000;
+    margin-right: 4vw !important;
+    margin-bottom: 1vw !important;
+    box-shadow: none ;
+}
+
+.modal .Pin .react-simple-keyboard .hg-button:last-child {
+    margin-right: 0px !important;
+}
+
+.modal .Pin .react-simple-keyboard .hg-button-cancel {
+    background: #fff !important;
+    font-weight: 500;
+    font-size: 1.5vw;
+}
+
+.modal .Pin .react-simple-keyboard .hg-button-clear {
+    background: #fff !important;
+}
+
+.modal .Pin .react-simple-keyboard .hg-button-clear img {
+    display:block;
+    margin:auto;
+    width: 4vw;
+    max-width: 40px;
+}
+
+@media (min-width: 800px){
+    .modal .Pin .react-simple-keyboard .hg-button {
+        margin-right: 32px !important;
+    }
+    .modal .Pin p:first-of-type {
+        font-size: 26px;
+    }
+    /* #react-select-2-placeholder {
+        font-size: 18px;
+    } */
+}
+
+@media (max-width: 800px){
+    .modal .Pin .pincode-input-container input {
+        font-size: 3.5vw;
+    }
+    .modal .Pin .react-simple-keyboard  .hg-button-cancel {
+        font-size: 2.5vw;
+    }
+    .modal .Pin p:first-of-type {
+        font-size: 3vw;
+    }
+}

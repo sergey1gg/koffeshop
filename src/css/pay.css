@@ -1,0 +1,88 @@
+.payment_container {
+    margin-top: 4vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.payment_container img {
+    max-width: 89%;
+    padding: 8%;
+}
+
+.qr_block {
+    margin: 3vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+    width: 40%;
+}
+
+.pay_success .another_color {
+    margin: 1vh 0 2vh !important;
+}
+
+.pay_success .order_num {
+    margin: 10vw;
+    font-size: 30vw;;
+}
+
+.pay_success .button_success {
+    text-align: center;
+    background: #E30611 !important;
+    border-radius: 2vw !important;
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 4vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.pay_success .button_success span {
+    color: #FFFFFF !important;
+}
+
+.payment_container span {
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 6vw;
+    line-height: 5vw;
+    text-align: center;
+    color: #000000;
+}
+
+.payment_container .another_color {
+    margin-top: 4vw;
+    font-size: 4vw;
+    color: #626C77;
+}
+
+.payment_container .btn-block {
+    margin: 5vw auto 10px;
+    width: 30%;
+    height: 10vw;
+    max-height: 80px;
+    background: #F2F3F7;
+    border-radius: 2vw;
+    border: none;
+}
+
+.payment_container .btn-block span {
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3.5vw;
+}
+
+@media (min-width: 800px) {
+    .payment_container .btn-block span {
+        font-size: 30px
+    }
+}

@@ -1,0 +1,162 @@
+footer {
+    /* height: 13%;
+    width: 100%;
+    position: fixed;
+    bottom: 5vh;
+    text-align: center; */
+    margin-top: 5vh;
+    margin-bottom: 5.7%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+footer .btn-block-one {
+    height: 100%;
+    margin: 0% 15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+}
+
+.btn-simple_skip {
+    position: fixed !important;
+    bottom: 6vw !important;
+    left: 28.375% !important;
+    height: 13vw !important;
+    max-height: 110px !important;
+    width: 43.25vw !important;
+    background: #F2F3F7 !important;
+    border-radius: 2vw !important;
+    font-family: 'MTS Sans' !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 4vw !important;
+    color: #000000 !important;
+    right: 28.375% !important;
+}
+
+/* footer .btn-block-two {
+    height: 100%;
+    display: flex;
+    font-weight: 300;
+    flex-direction: row;
+    justify-content: center;
+
+} */
+
+/* footer .btn-block-two .btn-simple {
+    display: flex;
+    height: 10vw;
+    max-height: 80px;
+    width: 30vw; */
+    /* margin: 5% 5% 7.3% 5%; */
+    /* margin-top: 5%;
+    margin-bottom: 7.3%;
+    margin-right: 5%;
+    font-size: 2.73em;
+    justify-content:center;
+    align-items: center ;
+    background-color: #F2F3F7;
+    color: #000;
+    text-align: center;
+    border-radius: 2vw;
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3vw;
+} */
+
+footer .simple_menu:first-child {
+    height: 10vw;
+    max-height: 80px;
+    width: 43.25vw;
+    background: #F2F3F7;
+    border-radius: 2vw;
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3vw;
+    color: #000000;
+    margin-right: 5vw;
+    position: absolute;
+    bottom: 2vh;
+    left: 5.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .btn-action {
+    height: 10vw;
+    max-height: 80px;
+    width: 43.25vw;
+    margin-top: 5%;
+    margin-bottom: 7.3%;
+    font-size: 2.73em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #E30611;
+    color: white;
+    text-align: center;
+    border-radius: 2vw;
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 3vw; */
+
+.widht_to_button {
+    width: 89%;
+    margin: 0 auto;
+}
+
+.btn-action {
+    background-color: #E30611 !important;
+    color: white !important;
+    text-align: center !important;
+    border-radius: 2vw;
+    font-family: 'MTS Sans' !important;
+    font-style: normal !important;
+    font-weight: 500 !important;
+    font-size: 4vw !important;
+}
+
+footer .btn-block .cart-items-area {
+    width: 100%;
+    float: right;
+    margin-right: 3%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+footer .btn-block .cart-items-area .cart-items {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+@media (min-width: 800px){
+    .btn-simple, .btn-action {
+        border-radius: 20px !important;
+    }
+    footer {
+        margin-top: 10vh;
+    }
+}
+
+@media (min-width: 600px) {
+    /* .btn-simple_skip {
+        position: inherit !important;
+    } */
+    /* footer .simple_menu:first-child {
+        position: inherit;
+    }
+    .btn-action {
+        position: inherit;
+    } */
+}

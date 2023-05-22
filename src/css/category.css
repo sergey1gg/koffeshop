@@ -1,0 +1,36 @@
+.categories {
+    width: 100%;
+    justify-content: center;
+    
+  }
+  
+.categories .category {
+    width: 89%;
+    margin: 4vw auto;
+    position	: relative;
+  }
+  
+.categories .category img {
+    width: 100%;
+    border-radius: 3vw 3vw 3vw 3vw;
+  }
+  
+.categories .category .img-block-title {
+    position	: absolute;
+      bottom	: 33%;
+      left		: 5%;
+      width		: 100%;
+    color: #fff;
+    font-size: 9vw;
+    font-weight: 600;
+  }
+  
+.categories .category .img-block-subtitle {
+    position	: absolute;
+      bottom	: 13%;
+      left		: 5%;
+      width		: 100%;
+    color: #fff;
+    font-size: 6vw;
+    font-weight: 600;
+  }

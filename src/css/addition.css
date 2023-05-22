@@ -1,0 +1,100 @@
+.add_in_cofe {
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 5vw;
+    color: #000000;
+    text-align: start;
+    width: 89%;
+    margin: 0 auto;
+}
+
+.additions {
+    display: flex;
+    width: 89%;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 4vw;
+}
+
+.additions .product {
+    width: 30%;
+    background: #F2F3F7;
+    border-radius: 2.5vw;
+    padding: 0.5%;
+    margin-right: 2.5vw;
+    margin-bottom: 2vw;
+    text-decoration: none;
+    font-family: 'MTS Sans';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 3vw;
+    line-height: 4vw;
+    color: #000000;
+}
+
+.additions .product:nth-child(3) {
+    margin-right: 0;
+}
+ 
+.additions .product {
+    display: flex;
+    flex-direction: column;
+}
+
+.additions .product img {
+    width: 100%;   
+    border-radius: 20px 20px 20px 20px;
+    margin-bottom: 4%;
+  }
+  
+.additions .product .img-block-title {
+    margin-left: 6%;    
+    color:  #000;
+    font-size: 3.5vw;
+    font-weight: 600;
+    margin-bottom: 2.4%;
+}
+
+.additions .product div {
+    margin-bottom: 4%;
+}
+  
+.additions .product .img-block-subtitle {
+    color: #000;
+    font-size: 2vw;
+    font-weight: 600;
+    margin-left: 6%;
+    margin-bottom: 2%;
+    font-weight: 400;
+    font-size: 3vw;
+  }
+
+  
+.additions .product .img-block-subtitle:last-child {
+    margin-left: 2vw;
+    color: #626C77;
+}
+
+.button_block {
+  width: 100%;
+  position: fixed;
+  right: 10px;
+  bottom: 10px;
+}
+
+
+@media (min-width: 800px) {
+    .additions .product .img-block-subtitle:last-child {
+        margin-left: 16px;
+    }
+}
+
+@media (max-width: 800px) {
+    .additions .product {
+        border-radius: 2.5vw;
+    }
+    .additions .product img {
+        border-radius: 2.5vw;
+    }
+}
