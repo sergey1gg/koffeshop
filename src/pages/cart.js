@@ -48,7 +48,7 @@ const CartPage = (props) => {
         
       },
       error => {
-        if(error.response.status===401){
+        if(error.response.status===403){
           navigate('/login', { replace: true });
         }
         else {

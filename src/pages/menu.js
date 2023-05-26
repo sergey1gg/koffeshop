@@ -38,13 +38,9 @@ const MenuPage = (props) => {
         });
     }
   };
-
   useEffect(() => {
     getCategory(props.kioskId);
     const interval = setInterval(() => {
-      if (isClose && !error) {
-        getCategory(props.kioskId);
-      }
     }, intervalValue);
 
     return () => clearInterval(interval);
