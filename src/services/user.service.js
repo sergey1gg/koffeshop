@@ -35,7 +35,7 @@ const getLocationList = async (countryId, cityName) => {
 }
 
 const getHistoryOrders = async () => {
-  const response = await api.post('/ustomer/order_history', {pass: 'pass'});
+  const response = await api.post('/customer/order_history', {pass: 'pass'});
   return response
 }
 

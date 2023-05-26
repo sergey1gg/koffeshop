@@ -9,7 +9,7 @@ import ShoppingCart from '../svg/shopping-cart1.svg';
 import SvgAccount from '../svg/account1.svg';
 // import Badge from 'react-bootstrap/Badge'
 import AuthService from "../services/auth.service";
-
+import preloader from "../common/preloader.gif"
 
 
 export default function Header(props) {
@@ -23,15 +23,39 @@ export default function Header(props) {
   const [location, setLocation] = useState(null);
   const [lock, setLock] = useState(null);
 
- 
+  const [error, setError] = useState(null);
+  const [intervalValue, setInternalValue] = useState(2000);
+  const [countdown, setCountdown] = useState(intervalValue / 1000);
+
+
+useEffect(() => {
+  if (modalActive) {
+    // Начинаем отсчет таймера
+    setInternalValue((prevIntervalValue) => prevIntervalValue + 2000);
+    // Запускаем таймер для каждой итерации
+    const countdownInterval = setInterval(() => {
+      setCountdown((prevCountdown) => {
+        if (prevCountdown <= 1 && error) {
+          cityList();
+          return (intervalValue + 2000) / 1000;
+        } else {
+          return prevCountdown - 1;
+        }
+      });
+    }, 1000);
+
+    return () => clearInterval(countdownInterval);
+  }
+}, [error, modalActive, setCountdown, setInternalValue]);
+
   useEffect(() => {
     if (!location) {
       console.log('location is undefined');
       cityList();
       getLocation();
-    } 
+    }
     getLockSettings();
-  }, [modalActive])
+  }, [modalActive]);
 
   const getLockSettings = async () => {
     const user_info = await AuthService.getUserInfo();
@@ -73,7 +97,7 @@ export default function Header(props) {
         setCitiesOption(cities_array);
       },
       error => {
-        console.log((error.response && error.response.data) || error.message || error.toString());
+        setError((error.response && error.response.data) || error.message || error.toString());
       }
     );
   }
@@ -175,7 +199,17 @@ export default function Header(props) {
         }
       </div>
       <Modal active={modalActive} setActive={setModalActive}>
+        {citiesOption ?(
         <Select options={citiesOption} onChange={handleChange} placeholder={'Выберите город'}/>
+        ):(
+          <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
+       <h5>Один момент</h5>
+       <div>
+   <img src={preloader} style={{width: '133px'}} alt="Loading..." />
+ </div>
+       <div style={{ fontSize: "14px" }}>{countdown} сек.</div>
+     </div>
+        )}
         {locationOption && (
           <div className='location_items'>
           {locationOption.map(el => (

@@ -3,9 +3,9 @@ import UserService from "../services/user.service"
 import Header from  "../components/Header"
 import Footer from  "../components/Footer"
 import {Category} from "../components/Category"
-
+import preloader from '../common/preloader.gif'
 const MenuPage = (props) => {
-  const intervalValue = 15000;
+  const [intervalValue, setInternalValue] = useState(2000);
   const [categories, setCategories] = useState(null);
   const [isClose, setIsClose] = useState(null);
   const [closeImg, setCloseImg] = useState(null);
@@ -48,26 +48,27 @@ const MenuPage = (props) => {
     }, intervalValue);
 
     return () => clearInterval(interval);
-  }, [props.kioskId, isClose, error]);
+  }, [props.kioskId, isClose, error, intervalValue]);
 
   useEffect(() => {
+    const handleRefresh = () => {
+      getCategory(props.kioskId);
+      setInternalValue((prevIntervalValue) => prevIntervalValue + 2000);
+    };
+  
     const countdownInterval = setInterval(() => {
       setCountdown((prevCountdown) => {
-        if (prevCountdown <= 1) {
-          if (error) {
-            handleRefresh()
-            setCountdown(intervalValue / 1000);
-            getCategory(props.kioskId);
-          }
+        if (prevCountdown <= 1 && error) {
+          handleRefresh();
+          return (intervalValue + 2000) / 1000;
         } else {
           return prevCountdown - 1;
         }
       });
     }, 1000);
-
+  
     return () => clearInterval(countdownInterval);
-  }, [props.kioskId, intervalValue, isClose, error]);
-
+  }, [props.kioskId, intervalValue, error]);
   const handleRefresh = () => {
     getCategory(props.kioskId);
     setCountdown(intervalValue / 1000);
@@ -81,11 +82,11 @@ const MenuPage = (props) => {
       {isLoading && <div>Loading...</div>}
       {error && (
         <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", marginTop: "50px", alignItems: "center", width: "100px" }}>
-          <h3>Ошибка</h3>
-          <button onClick={handleRefresh} style={{ background: "#F72331", color: "white", padding: "10px", marginTop: "20px", border: "none", width: "100%" }}>
-            Refresh
-          </button>
-          <div style={{ marginTop: "10px", fontSize: "14px" }}>{countdown} сек.</div>
+          <h5>Один момент</h5>
+          <div>
+      <img src={preloader} style={{width: '133px'}} alt="Loading..." />
+    </div>
+          <div style={{ fontSize: "14px" }}>{countdown} сек.</div>
         </div>
       )}
       {!isLoading && !error && categories && (

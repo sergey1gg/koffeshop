@@ -20,6 +20,8 @@ const CartPage = (props) => {
   const [displayOneItem, setDisplayOneItem] = useState('none');
   const [displayArrayItems, setDisplayArrayItems] = useState('none');
   
+  const [modalOpen,setModalOpen]=useState(false)
+
   const navigate = useNavigate();
   const keyboard = useRef();
   let pin = useRef();
@@ -46,10 +48,22 @@ const CartPage = (props) => {
         
       },
       error => {
-        console.log(error.response.data);
-        navigate('/login', { replace: true });
+        if(error.response.status===401){
+          navigate('/login', { replace: true });
+        }
+        else {
+          setModalOpen(true);
+          setTimeout(() => {
+            navigate('/', { replace: true });
+          }, 5000)
+        }
       }
     );
+  }
+
+  const handleCloseClick=()=>{
+    setModalOpen(false)
+    navigate('/', { replace: true });
   }
   
   useEffect(() => {
@@ -217,6 +231,15 @@ const CartPage = (props) => {
             onComplete={onSubmitHandler}
           />
         </div>
+      </Modal>
+      <Modal active={modalOpen} setActive={setModalOpen}>
+      <div style={{ display: "flex", justifyContent: "center", flexDirection: "column", alignItems: "center"}}>
+       <h5>Произошла ошибка</h5>
+       <div>
+ </div>
+       <div style={{ fontSize: "14px" }}> попробуйте позже.</div>
+     </div>
+        <button className='close_location' onClick={handleCloseClick}>Закрыть</button>
       </Modal>
     </main>
   )
